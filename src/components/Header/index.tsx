@@ -1,10 +1,12 @@
 import React from 'react';
-import { FaUser, FaBars, FaAngleDown } from 'react-icons/fa';
+import { FaUser, FaAngleDown } from 'react-icons/fa';
 
 import Logo from '../UI/Logo';
+import MenuMobil from '../MenuMobil';
 
 import { routers } from '../../constants/routers';
 import flag from '../../assets/Argentina.png';
+import logosrc from '../../assets/logo.png';
 import './styles.css';
 
 const Header = () => {
@@ -12,9 +14,8 @@ const Header = () => {
 
   const selectLink = (link: string) => setIsSelected(link);
   const isSelectedValid = (key: string) => isSelected === key;
-  const styleIcon = { size: 25, color: '#113c73' };
 
-  const openMenuMovil = () => {
+  const openMenu = () => {
     const navMobile = document.getElementById('navMobile');
     if (!navMobile) return;
 
@@ -26,8 +27,8 @@ const Header = () => {
   return (
     <div className="container">
       <nav className="container_nav">
-        <Logo />
-        {/**Menu para Desktop */}
+        <Logo srcLogo={logosrc} />
+
         <ul className="nav_menu_desktop">
           {routers().map(({ icon, name, key }) => {
             return (
@@ -54,24 +55,7 @@ const Header = () => {
             </a>
           </div>
         </div>
-
-        {/** Menu para mobile */}
-        <div className="icon_hamburgue">
-          <FaBars color="white" size={20} id="btnIconBurgue" onClick={openMenuMovil} />
-        </div>
-        <div className="nav_container_mobile" id="navMobile">
-          <ul className="nav_menu_mobile">
-            {routers(styleIcon).map(({ key, name, icon }) => {
-              return (
-                <li key={key} className="nav_item_mobile">
-                  <a className="nav_item_link_mobile" href="!#" onClick={() => selectLink(key)}>
-                    {icon} <p className="nav_item_mobile_name">{name}</p>
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <MenuMobil fnOpenMenu={openMenu} fnSelectLink={selectLink} />
       </nav>
     </div>
   );
