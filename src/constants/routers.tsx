@@ -1,4 +1,5 @@
 import { IconBaseProps } from 'react-icons';
+
 import { FaPlane, FaBed, FaHome, FaSuitcase, FaBriefcaseMedical, FaBusAlt, FaCarAlt, FaBullhorn } from 'react-icons/fa';
 import { Router } from '../interfaces/router';
 
@@ -6,11 +7,12 @@ const defaultStyleIcon: IconBaseProps = {
   size: 15,
   color: 'white',
 };
+
 export const routers = (styleIcon = defaultStyleIcon): Router[] => [
   {
     name: 'Vuelos',
     key: 'flights',
-    icon: <FaPlane {...styleIcon} title="hola" />,
+    icon: <FaPlane {...styleIcon} title="Hola Mitchelle" />,
   },
   {
     name: 'Hoteles',
@@ -48,3 +50,42 @@ export const routers = (styleIcon = defaultStyleIcon): Router[] => [
     icon: <FaBullhorn {...styleIcon} />,
   },
 ];
+
+export const routersFooter = () => ({
+  aboutUs: [
+    {
+      value: '!#',
+      label: 'Quienes somos',
+    },
+    {
+      value: '!#',
+      label: 'Feriados Nacionales',
+    },
+    {
+      value: '!#',
+      label: 'Afiliados',
+    },
+    {
+      value: '!#',
+      label: 'Promocionar Hotel',
+    },
+  ],
+  support: [
+    {
+      value: '!#',
+      label: 'Preguntas Frecuentes',
+    },
+    {
+      value: '!#',
+      label: 'Contacto',
+    },
+    {
+      value: '!#',
+      label: 'Política de privacidad',
+    },
+    {
+      value: '!#',
+      label: 'Términos y condiciones',
+    },
+  ],
+});
