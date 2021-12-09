@@ -1,5 +1,5 @@
 .container_logo {
-  width: 50%;
+  width: 100%;
   max-width: 100px;
 }
 
@@ -7,4 +7,8 @@
   width: 100%;
   height: auto;
   margin: 5px 0px;
+}
+
+.size_logo_product {
+  max-width: 150px;
 }
