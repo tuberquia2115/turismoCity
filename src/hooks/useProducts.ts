@@ -5,12 +5,13 @@ import { readProducts } from '../services/api/productsService';
 
 const useProducts = () => {
   const [isLoading, setIsLoading] = React.useState(true);
-  const [products, setProducts] = React.useState<Product>();
+  const [products, setProducts] = React.useState<Product[]>([]);
 
   React.useEffect(() => {
     (async () => {
       setIsLoading(true);
-      setProducts(await readProducts());
+      const response = await readProducts()
+      setProducts(response);
       setIsLoading(false);
     })();
   }, []);
