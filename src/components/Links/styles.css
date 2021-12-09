@@ -1,0 +1,16 @@
+.container_links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 10px;
+}
+
+@media screen and (max-width: 760px) {
+  .container_links {
+    justify-content: center;
+    margin: 0px;
+  }
+  
+}
